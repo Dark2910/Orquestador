@@ -1,4 +1,4 @@
-package com.EEspindola.ServicioGetById.JPA;
+package com.EEspindola.ServicioGetById.Utils;
 
 import java.util.List;
 

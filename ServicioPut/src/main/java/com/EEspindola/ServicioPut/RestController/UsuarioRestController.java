@@ -1,14 +1,15 @@
 package com.EEspindola.ServicioPut.RestController;
 
-import com.EEspindola.ServicioPut.JPA.Result;
-import com.EEspindola.ServicioPut.JPA.UsuarioJPA;
+import com.EEspindola.ServicioPut.DAO.UsuarioDAO;
+import com.EEspindola.ServicioPut.Service.UsuarioService;
+import com.EEspindola.ServicioPut.Utils.Result;
 import com.EEspindola.ServicioPut.ML.UsuarioML;
 import com.EEspindola.ServicioPut.JPA.UsuarioRepository;
-import com.EEspindola.ServicioPut.Service.UsuarioServiceImplementation;
 import com.EEspindola.ServicioPut.Utils.FolioRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,24 +25,28 @@ public class UsuarioRestController {
     private UsuarioRepository usuarioRepository;
 
     @Autowired
-    private UsuarioServiceImplementation usuarioServiceImplementation;
+    private UsuarioService usuarioService;
+
+    @Autowired
+    private UsuarioDAO usuarioDAO;
 
     @PostMapping("/put")
-    public Result Put(@RequestHeader(value = "folioRequest", required = false) String folioRequest , @RequestBody UsuarioML usuario){
+    public Result<?> Put(@RequestHeader(value = "folioRequest", required = false) String folioRequest , @RequestBody UsuarioML usuario){
+
+        Result<?> result = new Result<>();
 
         folioRequest = (folioRequest == null || folioRequest.isEmpty() || folioRequest.isBlank())? FolioRequest.CrearFolioRequest() : folioRequest;
-
-        Result result = new Result<>();
 
         try {
             UsuarioML usuarioRecuperado = GetByFolio(usuario.getFolio());
 
-            UsuarioJPA usuarioActualizado =  usuarioServiceImplementation.Normalizar(usuario, usuarioRecuperado);
+//            UsuarioJPA usuarioActualizado =  usuarioServiceImplementation.Normalizar(usuario, usuarioRecuperado);
+//            usuarioRepository.save( usuarioActualizado);
 
-            usuarioRepository.save( usuarioActualizado);
+            UsuarioML usuarioNormalizado = usuarioService.Normalizar(usuario, usuarioRecuperado);
 
+            result = usuarioDAO.UsuarioUpdate(usuarioNormalizado);
             result.message = MessageFormat.format("Folio: {0}",folioRequest);
-            result.isCorrect = true;
 
         } catch (Exception e){
             result.isCorrect = false;
@@ -65,7 +70,7 @@ public class UsuarioRestController {
         );
         Result result = response.getBody();
 
-        return (UsuarioML)result.object;
+        return (UsuarioML) result.object;
     }
 
 }

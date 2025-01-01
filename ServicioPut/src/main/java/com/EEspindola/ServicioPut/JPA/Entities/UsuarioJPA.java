@@ -1,4 +1,4 @@
-package com.EEspindola.ServicioPost.JPA;
+package com.EEspindola.ServicioPut.JPA.Entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,7 +9,6 @@ import java.util.Date;
 @Entity
 @Table(name = "Usuario")
 public class UsuarioJPA {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idusuario")

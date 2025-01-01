@@ -22,7 +22,7 @@ public class DataSourceConfig {
 
     public DataSourceConfig(
             @Value("${URL}") String url,
-            @Value("${USER}") String username,
+            @Value("${USERNAME}") String username,
             @Value("${PASSWORD}") String password,
             @Value("${DRIVER_CLASS_NAME}") String driverClassName
     ){

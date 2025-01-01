@@ -1,4 +1,4 @@
-package com.EEspindola.ServicioPut.JPA;
+package com.EEspindola.ServicioDelete.JPA.Entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

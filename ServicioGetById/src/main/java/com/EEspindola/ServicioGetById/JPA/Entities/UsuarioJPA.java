@@ -1,4 +1,4 @@
-package com.EEspindola.ServicioDelete.JPA;
+package com.EEspindola.ServicioGetById.JPA.Entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -12,33 +12,33 @@ public class UsuarioJPA {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idusuario")
-    private int idUsuario;
+    public int idUsuario;
 
     @Column(name = "folio")
-    private String folio;
+    public String folio;
 
     @Column(name = "nombre")
-    private String nombre;
+    public String nombre;
 
     @Column(name = "apellidopaterno")
-    private String apellidoPaterno;
+    public String apellidoPaterno;
 
     @Column(name = "apellidomaterno")
-    private String apellidoMaterno;
+    public String apellidoMaterno;
 
     @Column(name = "fechanacimiento")
-    private Date fechaNacimiento;
+    public Date fechaNacimiento;
 
     @Column(name = "username")
-    private String username;
+    public String username;
 
     @Column(name = "email")
-    private String email;
+    public String email;
 
     @Column(name = "password")
-    private String password;
+    public String password;
 
     @Column(name = "status")
-    private String status;
+    public String status;
 
 }

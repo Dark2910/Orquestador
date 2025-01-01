@@ -1,6 +1,6 @@
-package com.EEspindola.ServicioPost.Mapper;
+package com.EEspindola.ServicioPost.JPA.Mapper;
 
-import com.EEspindola.ServicioPost.JPA.UsuarioJPA;
+import com.EEspindola.ServicioPost.JPA.Entities.UsuarioJPA;
 import com.EEspindola.ServicioPost.ML.UsuarioML;
 import org.jetbrains.annotations.NotNull;
 

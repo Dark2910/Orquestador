@@ -1,4 +1,4 @@
-package com.EEspindola.ServicioPut.JPA;
+package com.EEspindola.ServicioDelete.Utils;
 
 import java.util.List;
 

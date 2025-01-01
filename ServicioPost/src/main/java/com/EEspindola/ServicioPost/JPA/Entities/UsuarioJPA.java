@@ -1,4 +1,4 @@
-package com.EEspindola.ServicioGetById.JPA;
+package com.EEspindola.ServicioPost.JPA.Entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,36 +9,37 @@ import java.util.Date;
 @Entity
 @Table(name = "Usuario")
 public class UsuarioJPA {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idusuario")
-    public int idUsuario;
+    private int idUsuario;
 
     @Column(name = "folio")
-    public String folio;
+    private String folio;
 
     @Column(name = "nombre")
-    public String nombre;
+    private String nombre;
 
     @Column(name = "apellidopaterno")
-    public String apellidoPaterno;
+    private String apellidoPaterno;
 
     @Column(name = "apellidomaterno")
-    public String apellidoMaterno;
+    private String apellidoMaterno;
 
     @Column(name = "fechanacimiento")
-    public Date fechaNacimiento;
+    private Date fechaNacimiento;
 
     @Column(name = "username")
-    public String username;
+    private String username;
 
     @Column(name = "email")
-    public String email;
+    private String email;
 
     @Column(name = "password")
-    public String password;
+    private String password;
 
     @Column(name = "status")
-    public String status;
+    private String status;
 
 }

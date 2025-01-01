@@ -1,6 +1,6 @@
 package com.EEspindola.ServicioGetAll.DAO.Implementation;
 
-import com.EEspindola.ServicioGetAll.DAO.Mappers.UsuarioMapper;
+import com.EEspindola.ServicioGetAll.DAO.Mapper.UsuarioMapper;
 import com.EEspindola.ServicioGetAll.DAO.UsuarioDAO;
 import com.EEspindola.ServicioGetAll.Utils.Constantes;
 import com.EEspindola.ServicioGetAll.Utils.Result;

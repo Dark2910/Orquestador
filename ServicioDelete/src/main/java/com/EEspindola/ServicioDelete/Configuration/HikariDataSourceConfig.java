@@ -1,4 +1,4 @@
-package com.EEspindola.ServicioGetAll.Configuration;
+package com.EEspindola.ServicioDelete.Configuration;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -36,7 +36,6 @@ public class HikariDataSourceConfig {
 
     @Bean(name = "hikariDataSource")
     public DataSource dataSource(){
-
         HikariConfig hikariConfig = new HikariConfig();
 
         hikariConfig.setJdbcUrl(URL);
@@ -51,6 +50,5 @@ public class HikariDataSourceConfig {
     public JdbcTemplate JdbcTemplate(@Qualifier("hikariDataSource") DataSource dataSource){
         return new JdbcTemplate(dataSource);
     }
-
 
 }

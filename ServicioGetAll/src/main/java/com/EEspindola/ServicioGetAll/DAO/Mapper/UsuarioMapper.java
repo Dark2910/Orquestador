@@ -1,6 +1,7 @@
-package com.EEspindola.ServicioGetAll.DAO.Mappers;
+package com.EEspindola.ServicioGetAll.DAO.Mapper;
 
 import com.EEspindola.ServicioGetAll.ML.UsuarioML;
+import com.EEspindola.ServicioGetAll.Utils.Constantes;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -19,10 +20,11 @@ public class UsuarioMapper implements RowMapper<UsuarioML> {
         usuarioML.setApellidoPaterno(rs.getString(4));
         usuarioML.setApellidoMaterno(rs.getString(5));
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat dateFormat = new SimpleDateFormat(Constantes.DATE_FORMAT);
         String fechaNacimiento = dateFormat.format(rs.getDate(6));
 
         usuarioML.setFechaNacimiento(fechaNacimiento);
+
         usuarioML.setUsername(rs.getString(7));
         usuarioML.setEmail(rs.getString(8));
         usuarioML.setPassword(rs.getString(9));

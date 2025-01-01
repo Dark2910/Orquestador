@@ -1,9 +1,9 @@
 package com.EEspindola.ServicioDelete.RestController;
 
-import com.EEspindola.ServicioDelete.JPA.Result;
+import com.EEspindola.ServicioDelete.DAO.UsuarioDAO;
+import com.EEspindola.ServicioDelete.Utils.Result;
 import com.EEspindola.ServicioDelete.JPA.UsuarioRepository;
 import com.EEspindola.ServicioDelete.ML.UsuarioML;
-import com.EEspindola.ServicioDelete.Mapper.UsuarioMapper;
 import com.EEspindola.ServicioDelete.Utils.FolioRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -22,6 +22,9 @@ public class UsuarioRestController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private UsuarioDAO usuarioDAO;
+
     @PostMapping("/delete/{folioId}")
     public Result Delete(@RequestHeader(value = "folioRequest", required = false) String folioRequest, @PathVariable String folioId){
 
@@ -32,10 +35,10 @@ public class UsuarioRestController {
         try {
             UsuarioML usuarioRecuperado = GetByFolio(folioId);
 
-            usuarioRepository.delete(UsuarioMapper.Map(usuarioRecuperado));
+            //usuarioRepository.delete(UsuarioMapper.Map(usuarioRecuperado));
 
+            result = usuarioDAO.UsuarioDelete(usuarioRecuperado);
             result.message = MessageFormat.format("Folio: {0}",folioRequest);
-            result.isCorrect = true;
 
         } catch (Exception e){
             result.isCorrect = false;

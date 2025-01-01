@@ -1,8 +1,8 @@
 package com.EEspindola.ServicioPut.Service;
 
-import com.EEspindola.ServicioPut.JPA.UsuarioJPA;
+import com.EEspindola.ServicioPut.JPA.Entities.UsuarioJPA;
 import com.EEspindola.ServicioPut.ML.UsuarioML;
-import com.EEspindola.ServicioPut.Mapper.UsuarioMapper;
+import com.EEspindola.ServicioPut.JPA.Mapper.UsuarioMapper;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.text.ParseException;
 public class UsuarioServiceImplementation implements UsuarioService {
 
     @Override
-    public UsuarioJPA Normalizar(@NotNull UsuarioML usuario,
+    public UsuarioML Normalizar(@NotNull UsuarioML usuario,
                                  @NotNull UsuarioML usuarioRecuperado) throws ParseException {
 
         usuarioRecuperado.setNombre(
@@ -57,6 +57,6 @@ public class UsuarioServiceImplementation implements UsuarioService {
                         usuarioRecuperado.getStatus() : usuario.getStatus()
         );
 
-        return UsuarioMapper.Map(usuarioRecuperado);
+        return usuarioRecuperado;
     }
 }

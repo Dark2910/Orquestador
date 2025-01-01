@@ -1,5 +1,6 @@
 package com.EEspindola.ServicioGetById.JPA;
 
+import com.EEspindola.ServicioGetById.JPA.Entities.UsuarioJPA;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

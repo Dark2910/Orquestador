@@ -1,7 +1,7 @@
-package com.EEspindola.ServicioDelete.Mapper;
+package com.EEspindola.ServicioPut.JPA.Mapper;
 
-import com.EEspindola.ServicioDelete.JPA.UsuarioJPA;
-import com.EEspindola.ServicioDelete.ML.UsuarioML;
+import com.EEspindola.ServicioPut.JPA.Entities.UsuarioJPA;
+import com.EEspindola.ServicioPut.ML.UsuarioML;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.ParseException;

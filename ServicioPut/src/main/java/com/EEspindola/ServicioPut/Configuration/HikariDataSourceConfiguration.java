@@ -1,4 +1,4 @@
-package com.EEspindola.ServicioGetAll.Configuration;
+package com.EEspindola.ServicioPut.Configuration;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -13,34 +13,33 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:connection.properties")
-public class HikariDataSourceConfig {
+public class HikariDataSourceConfiguration {
 
     private final String URL;
-    private final String USER;
+    private final String USERNAME;
     private final String PASSWORD;
 
     public static String DRIVER_CLASS_NAME;
 
-    public HikariDataSourceConfig(
+    public HikariDataSourceConfiguration(
             @Value("${URL}") String url,
-            @Value("${USERNAME}") String user,
+            @Value("${USERNAME}") String username,
             @Value("${PASSWORD}") String password,
             @Value("${DRIVER_CLASS_NAME}") String driverClassName
     ){
         this.URL = url;
-        this.USER = user;
+        this.USERNAME = username;
         this.PASSWORD = password;
 
-        HikariDataSourceConfig.DRIVER_CLASS_NAME = driverClassName;
-    }
+        HikariDataSourceConfiguration.DRIVER_CLASS_NAME = driverClassName;
+    };
 
     @Bean(name = "hikariDataSource")
     public DataSource dataSource(){
-
         HikariConfig hikariConfig = new HikariConfig();
 
         hikariConfig.setJdbcUrl(URL);
-        hikariConfig.setUsername(USER);
+        hikariConfig.setUsername(USERNAME);
         hikariConfig.setPassword(PASSWORD);
         hikariConfig.setDriverClassName(DRIVER_CLASS_NAME);
 
@@ -48,9 +47,8 @@ public class HikariDataSourceConfig {
     }
 
     @Bean(name = "hikariTemplate")
-    public JdbcTemplate JdbcTemplate(@Qualifier("hikariDataSource") DataSource dataSource){
+    public JdbcTemplate jdbcTemplate(@Qualifier("hikariDataSource") DataSource dataSource){
         return new JdbcTemplate(dataSource);
     }
-
 
 }

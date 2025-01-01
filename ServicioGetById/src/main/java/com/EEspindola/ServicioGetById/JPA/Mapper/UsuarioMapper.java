@@ -1,11 +1,10 @@
-package com.EEspindola.ServicioGetById.Mapper;
+package com.EEspindola.ServicioGetById.JPA.Mapper;
 
-import com.EEspindola.ServicioGetById.JPA.UsuarioJPA;
+import com.EEspindola.ServicioGetById.JPA.Entities.UsuarioJPA;
 import com.EEspindola.ServicioGetById.ML.UsuarioML;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
-import java.util.Optional;
 
 public class UsuarioMapper {
 
