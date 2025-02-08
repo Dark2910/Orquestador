@@ -1,6 +1,5 @@
-package com.EEspindola.Orquestador.Exceptions;
+package com.EEspindola.orquestador.exceptions;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;

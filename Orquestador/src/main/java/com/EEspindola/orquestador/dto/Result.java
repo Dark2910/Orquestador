@@ -1,7 +1,6 @@
-package com.EEspindola.Orquestador.ML;
+package com.EEspindola.orquestador.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

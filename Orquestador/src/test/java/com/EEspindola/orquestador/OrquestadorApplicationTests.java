@@ -1,4 +1,4 @@
-package com.EEspindola.Orquestador;
+package com.EEspindola.orquestador;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

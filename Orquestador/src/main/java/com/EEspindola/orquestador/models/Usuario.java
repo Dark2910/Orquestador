@@ -1,10 +1,9 @@
-package com.EEspindola.Orquestador.ML;
+package com.EEspindola.orquestador.models;
 
-import com.EEspindola.Orquestador.Utils.Constantes;
+import com.EEspindola.orquestador.utils.Constantes;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 

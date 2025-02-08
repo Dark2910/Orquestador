@@ -1,4 +1,4 @@
-package com.EEspindola.Orquestador;
+package com.EEspindola.orquestador;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,14 +1,10 @@
-package com.EEspindola.Orquestador.Utils;
-
-import org.springframework.stereotype.Service;
+package com.EEspindola.orquestador.utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Optional;
 import java.util.Random;
 
-@Service
 public class FolioRequest {
 
     public static String CrearFolioRequest() {

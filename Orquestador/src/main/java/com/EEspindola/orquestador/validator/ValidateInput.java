@@ -1,7 +1,7 @@
-package com.EEspindola.Orquestador.Validator;
+package com.EEspindola.orquestador.validator;
 
-import com.EEspindola.Orquestador.Exceptions.InvalidArgument;
-import com.EEspindola.Orquestador.Utils.FolioRequest;
+import com.EEspindola.orquestador.exceptions.InvalidArgument;
+import com.EEspindola.orquestador.utils.FolioRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BeanPropertyBindingResult;
