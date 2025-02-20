@@ -31,19 +31,19 @@ public class OrquestadorServiceImp implements OrquestadorService {
     }
 
     @Override
-    public Result<?> GetAll(HttpSession session) {
+    public Result<Usuario> GetAll(HttpSession session) {
 //        session.setAttribute("session", FolioRequest.CrearFolioRequest());
 
         HttpHeaders httpHeader = new HttpHeaders();
         httpHeader.add("folioRequest", FolioRequest.CrearFolioRequest());
 
-        HttpEntity<Result<?>> httpEntity = new HttpEntity(HttpEntity.EMPTY, httpHeader);
+        HttpEntity<Result<Usuario>> httpEntity = new HttpEntity<>(null, httpHeader);
 
-        ResponseEntity<Result<?>> response = restTemplate.exchange(
+        ResponseEntity<Result<Usuario>> response = restTemplate.exchange(
                 Constantes.ENDPOINT_GET_ALL,
                 HttpMethod.POST,
                 httpEntity,
-                new ParameterizedTypeReference<Result<?>>() {}
+                new ParameterizedTypeReference<Result<Usuario>>() {}
         );
 
         return  response.getBody();
