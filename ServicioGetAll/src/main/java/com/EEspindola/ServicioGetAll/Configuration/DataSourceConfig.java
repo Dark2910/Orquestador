@@ -21,10 +21,10 @@ public class DataSourceConfig {
     private final String DRIVER_CLASS_NAME ;
 
     public DataSourceConfig(
-            @Value("${URL}") String url,
-            @Value("${USERNAME}") String username,
-            @Value("${PASSWORD}") String password,
-            @Value("${DRIVER_CLASS_NAME}") String driverClassName
+            @Value("${DB.CONNECTION.URL}") String url,
+            @Value("${DB.CONNECTION.USERNAME}") String username,
+            @Value("${DB.CONNECTION.PASSWORD}") String password,
+            @Value("${DB.CONNECTION.DRIVER_CLASS_NAME}") String driverClassName
     ){
         URL = url;
         USERNAME = username;

@@ -28,11 +28,11 @@ public class UsuarioRestController {
     private UsuarioImp usuarioDAO;
 
     @PostMapping
-    public Result GetAll(@RequestHeader(value = "folioRequest", required = false) String folioRequest){
+    public Result<UsuarioML> GetAll(@RequestHeader(value = "folioRequest", required = false) String folioRequest){
 
         folioRequest = (folioRequest == null || folioRequest.isEmpty() || folioRequest.isBlank())? FolioRequest.CrearFolioRequest() : folioRequest;
 
-        Result result = new Result<>();
+        Result<UsuarioML> result = new Result<>();
 
         try {
 
@@ -43,9 +43,7 @@ public class UsuarioRestController {
 //               usuariosML.add(UsuarioMapper.Map(usuarioJPA));
 //            }
 
-            List<UsuarioML> usuariosML = usuarioDAO.GetAll().objects;
-
-            result.objects = usuariosML;
+            result.objects = usuarioDAO.GetAll().objects;
             result.message = MessageFormat.format("Folio: {0}", folioRequest);
             result.isCorrect = true;
 

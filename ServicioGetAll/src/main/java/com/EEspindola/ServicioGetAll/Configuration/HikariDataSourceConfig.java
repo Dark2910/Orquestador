@@ -22,10 +22,10 @@ public class HikariDataSourceConfig {
     public static String DRIVER_CLASS_NAME;
 
     public HikariDataSourceConfig(
-            @Value("${URL}") String url,
-            @Value("${USERNAME}") String user,
-            @Value("${PASSWORD}") String password,
-            @Value("${DRIVER_CLASS_NAME}") String driverClassName
+            @Value("${DB.CONNECTION.URL}") String url,
+            @Value("${DB.CONNECTION.USERNAME}") String user,
+            @Value("${DB.CONNECTION.PASSWORD}") String password,
+            @Value("${DB.CONNECTION.DRIVER_CLASS_NAME}") String driverClassName
     ){
         this.URL = url;
         this.USER = user;
